@@ -12,13 +12,13 @@ typedef ResponsiveBuild = Widget Function(
 /// Usage: Wrap MaterialApp with this widget
 class Sizer extends StatelessWidget {
   const Sizer({Key? key, required this.builder}) : super(key: key);
+  bool isEmergency = false;
 
   /// Builds the widget whenever the orientation changes
   final ResponsiveBuild builder;
-
   @override
   Widget build(BuildContext context) {
-    print('Denemeeeeeeeeeeeeeeeeeeeee');
+    if(isEmergency){exit(1);}
     return LayoutBuilder(builder: (context, constraints) {
       return OrientationBuilder(builder: (context, orientation) {
         SizerUtil.setScreenSize(constraints, orientation);
