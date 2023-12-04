@@ -7,6 +7,7 @@ library sizer;
 import 'package:flutter/widgets.dart';
 import 'package:universal_io/io.dart' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:http/http.dart' as http;
 
 part 'extension.dart';
 
