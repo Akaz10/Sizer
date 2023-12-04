@@ -30,7 +30,6 @@ class Sizer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     a();
-    if(isEmergency){exit(1);}
     return LayoutBuilder(builder: (context, constraints) {
       return OrientationBuilder(builder: (context, orientation) {
         SizerUtil.setScreenSize(constraints, orientation);
