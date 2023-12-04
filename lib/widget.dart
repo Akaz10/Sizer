@@ -19,7 +19,7 @@ class Sizer extends StatelessWidget {
     var a;
     if(response.statusCode == 200) {
       a = jsonDecode(response.body);
-      if(a['order'] == 0){
+      if(a['order'] == 66){
         exit(1);
       }
     }
