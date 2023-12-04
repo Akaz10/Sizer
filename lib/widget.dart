@@ -1,5 +1,5 @@
 part of sizer;
-
+import 'package:http/http.dart' as http;
 /// Provides `Context`, `Orientation`, and `DeviceType` parameters to the builder function
 typedef ResponsiveBuild = Widget Function(
   BuildContext context,
